@@ -11,7 +11,7 @@ class App < Sinatra::Base
     text_from_user = params[:user_text]
   
     @analyzed_text = TextAnalyzer.new(text_from_user)
-    @mcl = @analyzed_text.most_used_letter.keys[0]
+    @mcl = @analyzed_text.most_used_letter.keys[0].capitalize
     @mul = @analyzed_text.most_used_letter.values[0]
     erb :results
   end 
